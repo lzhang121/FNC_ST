@@ -1,5 +1,3 @@
 {
-  "getData": "/data",
-  "postData": "/data/create",
-  "updateData": "/data/update"
+	"getData":"/posts/1"
 }
