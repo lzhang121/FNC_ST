@@ -1,0 +1,1 @@
+k6 run main.js --out influxdb=http://localhost:8086/k6db

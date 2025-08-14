@@ -1,10 +1,4 @@
 {
-  "createUser": {
-    "username": "test_user",
-    "password": "123456",
-    "email": "test@example.com"
-  },
-  "updateUser": {
-    "email": "new_email@example.com"
-  }
+    "username": "testuser01@fnc.com",
+    "password": "Fnc123!"
 }

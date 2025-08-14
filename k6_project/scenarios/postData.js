@@ -1,20 +1,15 @@
 ﻿import http from 'k6/http';
 import { check, sleep } from 'k6';
-import env from '../config/env.js';
-import urls from '../data/urls.json';
-import payloads from '../data/payloads.json';
 import { postTrend, postSuccess } from '../metrics/customMetrics.js';
-import { randomUserId } from './utils.js';
+
+const env = JSON.parse(open('../config/env.json'));
+const urls = JSON.parse(open('../data/urls.json'));
+const payloads = JSON.parse(open('../data/payloads.json'));
 
 export function scenarioPost() {
-  const payload = JSON.stringify({
-    ...payloads.createUser,
-    username: `user_${randomUserId()}`
-  });
-
+  const payload = payloads
   const headers = {
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${env.authToken}`
   };
 
   const res = http.post(`${env.baseURL}${urls.postData}`, payload, { headers });

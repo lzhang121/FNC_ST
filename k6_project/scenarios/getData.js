@@ -1,9 +1,6 @@
-﻿// scenarios/getData.js
-
-import http from 'k6/http';
+﻿import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { getTrend, getSuccess } from '../metrics/customMetrics.js';
-//import { open } from 'k6/io';
 
 const env = JSON.parse(open('../config/env.json'));
 const urls = JSON.parse(open('../data/urls.json'));
