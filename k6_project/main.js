@@ -17,6 +17,7 @@
 //export default scenarioPost;
 
 
-
+import { options } from './config/options_browser.js';
 import { loadhomePage } from './scenarios/frontend/mangementEnd-homePage.js';
+export { options };
 export default loadhomePage;

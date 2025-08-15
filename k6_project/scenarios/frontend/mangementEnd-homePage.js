@@ -1,27 +1,7 @@
 ﻿import { browser } from 'k6/browser';
 import { check } from 'k6';
 
-export const options = {
-  scenarios: {
-    ui: {
-      executor: 'shared-iterations',
-      vus: 5,
-      iterations: 20,
-      options: {
-        browser: {
-          type: 'chromium',
-        },
-      },
-    },
-  },
-  thresholds: {
-    checks: ['rate==1.0'],
-  },
-};
-
-
-
-export default async function loadhomePage () {
+export async function loadhomePage() {
   const page = await browser.newPage();
 
   try {
@@ -37,7 +17,7 @@ export default async function loadhomePage () {
     await page.locator('.management_end_title').waitFor({ timeout: 10000 });
 
 
-    await page.screenshot({ path: 'screenshots/screenshot.png' });
+    await page.screenshot({ path: './screenshots/screenshot.png' });
   } finally {
     await page.close();
   }
