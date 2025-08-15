@@ -1,3 +1,5 @@
 {
-	"postData":"/admin-api/auth/auth/login"
+	"auth_auth_login":"/admin-api/auth/auth/login",
+	"auth_auth_refresh_token":"/admin-api/auth/auth/refresh-token",
+	"job_weather_get":"/admin-api/job/weather/get"
 }
