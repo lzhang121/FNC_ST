@@ -1,0 +1,19 @@
+﻿services:
+  wpt-server:
+    image: iteratec/wptserver
+    container_name: wpt-server
+    ports:
+      - "4000:80"
+    volumes:
+      - ./wpt_data:/var/www/html
+    restart: always
+
+  wpt-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent   # 使用下面提供的 Python 3 agent Dockerfile
+    container_name: wpt-agent
+    depends_on:
+      - wpt-server
+    shm_size: 1g
+    restart: always
